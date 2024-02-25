@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Analysis Result</h1>
+    </header>
+    <div class="container">
+        <h2>Basic Statistics</h2>
+        {{ basic_statistics | safe }}
+        <h2>Scatter Plot</h2>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Scatter Plot">
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

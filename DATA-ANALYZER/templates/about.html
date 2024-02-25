@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="background"></div>
+        <h1 class="title">About Us</h1>
+    </header>
+    <div class="container">
+        <ul class="developers">
+            {% for developer in developers %}
+            <li>{{ developer.name }} - <a href="{{ developer.email }}">{{ developer.email }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
